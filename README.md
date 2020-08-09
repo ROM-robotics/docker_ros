@@ -1,6 +1,3 @@
-docker file ok.
-docker compose ok.
-But ros node cannot communicate each other because network isn't implement.
-Here is libnet for containers.
-
-https://github.com/moby/libnetwork
+<h2>Version 2</h2>
+<p> First you need to build image . Then run "sudo docker-compose up ." .
+	After running , 3 containers will run and communicate with ros </p>
