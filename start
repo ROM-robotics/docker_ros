@@ -1,0 +1,21 @@
+#!/usr/bin/bash
+xhost +local:root
+docker run -it --privileged --network='host' \
+--env=NVIDIA_VISIBLE_DEVICES=all \
+--env=NVIDIA_DRIVER_CAPABILITIES=all \
+--env='DISPLAY' \
+--env='QT_X11_NO_MITSHM=1' \
+--volume='/tmp/.X11-unix:/tmp/.X11-unix:rw' \
+--runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=0 \
+romrobotics/ros:kinetic-course bash
+
+
+
+#xhost +local:root
+#docker run -it --network='host' \
+#--env='DISPLAY' \
+#--env='QT_X11_NO_MITSHM=1' \
+#--volume='/tmp/.X11-unix:/tmp/.X11-unix:rw' \
+#romrobotics/ros:kinetic-course bash
+
+#--runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=O # IF U R RUNNING OLD DOCKER
