@@ -11,4 +11,5 @@ xhost +local:root
 docker run -it --network='host' --env='DISPLAY' --env='QT_X11_NO_MITSHM=1' --volume='/tmp/.X11-unix:/tmp/.X11-unix:rw' --volume='/path/to/hostdir:/containerdir' ghostmanvsrobot/ros:kinetic-course bash
 
 echo "Stop"
+#<br>
 xhost -local:root
