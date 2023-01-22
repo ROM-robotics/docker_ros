@@ -9,6 +9,9 @@ docker run -it --privileged --network='host' \
 --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=0 \
 romrobotics/ros:kinetic-course bash
 
+echo "Deleting ..."
+xhost -local:root
+docker rm $2
 
 
 #xhost +local:root
