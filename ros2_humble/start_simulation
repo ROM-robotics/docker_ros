@@ -1,4 +1,5 @@
-#/usr/bin/bash 
+#/usr/bin/bash
+# available tag names = amr_simulation, base_image, base_image_yolo
 docker stop amr_simulation_container 
 docker rm amr_simulation_container 
 xhost +local:root 

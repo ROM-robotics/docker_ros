@@ -1,0 +1,15 @@
+#/usr/bin/bash
+# available tag names = ur5_simulation, drone_simulation, amr_simulation, base_image, base_image_yolo 
+docker stop drone_simulation_container 
+docker rm drone_simulation_container 
+xhost +local:root 
+docker run -it --network='host' \
+-p 80:80 \
+-p 9090:9090 \
+--env='DISPLAY' \
+--env='QT_X11_NO_MITSHM=1' \
+--env='XDG_RUNTIME_DIR=/run/user/${UID}' \
+--volume='/tmp/.X11-unix:/tmp/.X11-unix:rw' \
+--name drone_simulation_container \
+romrobotics/humble_production:drone_simulation bash
+docker stop drone_simulation_container docker rm drone_simulation_container
