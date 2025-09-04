@@ -58,6 +58,7 @@ RUN apt-get update && apt-get install -y \
     ros-humble-nav2-bringup \
     ros-humble-rosbridge-server \
     ros-humble-robot-localization \
+    ros-humble-twist-mux \
     ros-humble-imu-sensor-broadcaster \
     python3-colcon-common-extensions \
     sudo tmux tmuxinator qtbase5-dev libqt5svg5-dev libzmq3-dev libdw-dev \
