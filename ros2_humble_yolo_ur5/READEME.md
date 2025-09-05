@@ -10,6 +10,15 @@ password=mr_robot
 ```
 
 ### ဘယ်လို run ရမလဲ
+ပထမဆုံး host ပေါ်မှာ လဲ moveit2_2025 ကို clone ပါ။
+```
+mkdir -p devel_ws/src
+cd devel_ws/src
+git clone git@github.com:ROM-robotics/moveit2_2025.git -b humble-ignition-fortress 
+cd ..
+colcon build
+```
+ပြီးရင် 
 ``` 
 # wayland က docker container ထဲမှာ အဆင်မပြေတာကြောင့် .tmuxinator ထဲက နောက်ဆုံး instruction ဖြစ်တဲ့ 
 source ~/yolo_env/bin/activate; export QT_QPA_PLATFORM=wayland; python3 ~/devel_ws/src/moveit2_2025/ui/bolt_selector.py
