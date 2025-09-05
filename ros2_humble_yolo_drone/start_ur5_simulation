@@ -1,5 +1,10 @@
 #/usr/bin/bash
 # available tag names = ur5_simulation, drone_simulation, amr_simulation, base_image, base_image_yolo 
+
+# stop and remove old container
+docker stop ur5_simulation_container 2>/dev/null || true
+docker rm ur5_simulation_container 2>/dev/null || true
+
 docker stop ur5_simulation_container 
 docker rm ur5_simulation_container 
 xhost +local:root 
@@ -7,9 +12,14 @@ docker run -it --network='host' \
 -p 80:80 \
 -p 9090:9090 \
 --env='DISPLAY' \
+--env='ROS_DOMAIN_ID=73' \
 --env='QT_X11_NO_MITSHM=1' \
 --env='XDG_RUNTIME_DIR=/run/user/${UID}' \
 --volume='/tmp/.X11-unix:/tmp/.X11-unix:rw' \
 --name ur5_simulation_container \
 romrobotics/humble_production:ur5_simulation bash
 docker stop ur5_simulation_container docker rm ur5_simulation_container
+
+# cleanup after exit
+docker stop ur5_simulation_container
+docker rm ur5_simulation_container

@@ -1,5 +1,5 @@
 #/usr/bin/bash
-# available tag names = amr_simulation, base_image, base_image_yolo
+# available tag names = ur5_simulation, drone_simulation, amr_simulation, base_image, base_image_yolo 
 
 # stop and remove old container
 docker stop ur5_simulation_container 2>/dev/null || true
@@ -13,10 +13,9 @@ docker run -it --network='host' \
 --env='QT_X11_NO_MITSHM=1' \
 --env='XDG_RUNTIME_DIR=/run/user/${UID}' \
 --volume='/tmp/.X11-unix:/tmp/.X11-unix:rw' \
---volume='/home/mr_robot/Desktop/Git/rom_dynamics_robots_sim/packages_rom_sdk/rom_msgs/rom_dynamics_app/build:/home/mr_robot/rom_dynamics_app' \
---name amr_simulation_container \
-romrobotics/humble_production:amr_simulation bash
-docker stop amr_simulation_container docker rm amr_simulation_container
+--name base_image_yolo_container \
+romrobotics/humble_production:base_image_yolo bash
+docker stop base_image_yolo_container docker rm base_image_yolo_container
 
 # cleanup after exit
 docker stop ur5_simulation_container
