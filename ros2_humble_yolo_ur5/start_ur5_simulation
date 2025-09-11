@@ -17,9 +17,11 @@ docker run -it --network='host' \
 --env='XDG_RUNTIME_DIR=/run/user/${UID}' \
 --volume='/tmp/.X11-unix:/tmp/.X11-unix:rw' \
 --name ur5_simulation_container \
-romrobotics/humble_production:ur5_simulation bash
+romrobotics/humble_production:ur5_simulation tmuxinator
 docker stop ur5_simulation_container docker rm ur5_simulation_container
 
 # cleanup after exit
 docker stop ur5_simulation_container
 docker rm ur5_simulation_container
+
+# source ~/devel_ws/install/setup.bash; source ~/yolo_env/bin/activate; export QT_QPA_PLATFORM=wayland; python3 ~/devel_ws/src/moveit2_2025/ui/bolt_selector.py
