@@ -2,8 +2,8 @@
 # available tag names = ur5_simulation, drone_simulation, amr_simulation, base_image, base_image_yolo 
 
 # stop and remove old container
-docker stop ur5_simulation_container 2>/dev/null || true
-docker rm ur5_simulation_container 2>/dev/null || true
+docker stop base_image_yolo_container 2>/dev/null || true
+docker rm base_image_yolo_container 2>/dev/null || true
 
 xhost +local:root 
 docker run -it --network='host' \
@@ -18,5 +18,5 @@ romrobotics/humble_production:base_image_yolo bash
 docker stop base_image_yolo_container docker rm base_image_yolo_container
 
 # cleanup after exit
-docker stop ur5_simulation_container
-docker rm ur5_simulation_container
+docker stop base_image_yolo_container
+docker rm base_image_yolo_container
