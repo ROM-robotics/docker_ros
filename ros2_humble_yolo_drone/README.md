@@ -8,3 +8,5 @@ docker build -t ros2-robot-yolo .
 username=mr_robot
 password=mr_robot
 ```
+
+## DRONE SIMULATION ကို container, gazebo သေချာအဆင်မပြေသေးတာကြောင့် host မှာ စမ်းသပ်ပါ။

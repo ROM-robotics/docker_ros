@@ -1,6 +1,6 @@
 #/usr/bin/bash
 # available tag names = ur5_simulation, drone_simulation, amr_simulation, base_image, base_image_yolo 
-
+# ur5_simulation ( use wayland ), drone_simulation ( use )
 # stop and remove old container
 docker stop ur5_simulation_container 2>/dev/null || true
 docker rm ur5_simulation_container 2>/dev/null || true
